@@ -1,0 +1,90 @@
+
+Working file: Changes
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
+
+Working file: MANIFEST
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
+
+Working file: Makefile.PL
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
+
+Working file: MultiDispatch.pm
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
+
+Working file: README
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
+
+Working file: test.pl
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
+Version 1 of POE::Session::MultiDispatch
+=============================================================================
