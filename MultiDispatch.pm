@@ -55,14 +55,14 @@ POE sessions.
 
 package POE::Session::MultiDispatch;
 #
-# $Revision: 1.1 $
-# $Id: MultiDispatch.pm,v 1.1 2003/01/31 23:52:45 cwest Exp $
+# $Revision: 1.2 $
+# $Id: MultiDispatch.pm,v 1.2 2003/02/01 19:50:17 cwest Exp $
 #
 use strict;
 $^W = 1; # At least for development.
 
 use vars qw($VERSION);
-$VERSION = (qw$Revision: 1.1 $)[1];
+$VERSION = (qw$Revision: 1.2 $)[1];
 
 use Carp qw(carp croak);
 use base qw[POE::Session];
@@ -310,15 +310,20 @@ sub state_location {
 sub _invoke_state {
   my ($self, $source_session, $state, $etc, $file, $line) = @_;
 
-  my $handlers = $self->[POE::Session::SE_STATES]->{$state};
+  my $handlers = $self->[POE::Session::SE_STATES]->{$state}
+    || $self->[POE::Session::SE_STATES]->{POE::Session::EN_DEFAULT};
   $self->[POE::Session::SE_OPTIONS]->{+__PACKAGE__}->{$state} = $handlers;
 
-  foreach (@$handlers) {
-    if ( $self->status == 1 ) {
-      $self->go;
-      last;
+  if ( $handlers ) {
+    foreach (@$handlers) {
+      if ( $self->status == 1 ) {
+        $self->go;
+        last;
+      }
+      $self->[POE::Session::SE_STATES]->{$state} = $_;
+      $self->SUPER::_invoke_state(@_[1..$#_]);
     }
-    $self->[POE::Session::SE_STATES]->{$state} = $_;
+  } else {
     $self->SUPER::_invoke_state(@_[1..$#_]);
   }
 

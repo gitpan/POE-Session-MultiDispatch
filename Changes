@@ -1,19 +1,26 @@
+? blib
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/Changes,v
 Working file: Changes
-head: 1.1
+head: 1.2
 branch:
 locks: strict
 access list:
 symbolic names:
 keyword substitution: kv
-total revisions: 1;	selected revisions: 1
+total revisions: 2;	selected revisions: 2
 description:
+----------------------------
+revision 1.2
+date: 2003/02/01 00:08:29;  author: cwest;  state: Exp;  lines: +88 -4
+Updated Changes
 ----------------------------
 revision 1.1
 date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
 Version 1 of POE::Session::MultiDispatch
 =============================================================================
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/MANIFEST,v
 Working file: MANIFEST
 head: 1.1
 branch:
@@ -29,6 +36,7 @@ date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
 Version 1 of POE::Session::MultiDispatch
 =============================================================================
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/Makefile.PL,v
 Working file: Makefile.PL
 head: 1.1
 branch:
@@ -44,21 +52,27 @@ date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
 Version 1 of POE::Session::MultiDispatch
 =============================================================================
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/MultiDispatch.pm,v
 Working file: MultiDispatch.pm
-head: 1.1
+head: 1.2
 branch:
 locks: strict
 access list:
 symbolic names:
 keyword substitution: kv
-total revisions: 1;	selected revisions: 1
+total revisions: 2;	selected revisions: 2
 description:
+----------------------------
+revision 1.2
+date: 2003/02/01 19:50:17;  author: cwest;  state: Exp;  lines: +14 -9
+_default states were not being handled properly, this has been fixed.
 ----------------------------
 revision 1.1
 date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
 Version 1 of POE::Session::MultiDispatch
 =============================================================================
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/README,v
 Working file: README
 head: 1.1
 branch:
@@ -74,6 +88,7 @@ date: 2003/01/31 23:52:45;  author: cwest;  state: Exp;
 Version 1 of POE::Session::MultiDispatch
 =============================================================================
 
+RCS file: /storage/cvsroot/perl/cwest/POE-Session-MultiDispatch/test.pl,v
 Working file: test.pl
 head: 1.1
 branch:
