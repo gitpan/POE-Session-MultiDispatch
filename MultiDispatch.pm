@@ -55,14 +55,14 @@ POE sessions.
 
 package POE::Session::MultiDispatch;
 #
-# $Revision: 1.2 $
-# $Id: MultiDispatch.pm,v 1.2 2003/02/01 19:50:17 cwest Exp $
+# $Revision: 1.3 $
+# $Id: MultiDispatch.pm,v 1.3 2003/02/01 21:53:45 cwest Exp $
 #
 use strict;
 $^W = 1; # At least for development.
 
 use vars qw($VERSION);
-$VERSION = (qw$Revision: 1.2 $)[1];
+$VERSION = (qw$Revision: 1.3 $)[1];
 
 use Carp qw(carp croak);
 use base qw[POE::Session];
@@ -363,7 +363,13 @@ sub register_state {
             $POE::Kernel::poe_kernel->ID_session_to_id($self), ")"
           )
         if ( $self->[POE::Session::SE_OPTIONS]->{+POE::Session::OPT_DEBUG} );
-      push @{ $self->[POE::Session::SE_STATES]->{$name} }, $handler;
+      if ( ref($self->[POE::Session::SE_STATES]->{$name}) eq 'ARRAY' || ! $self->[POE::Session::SE_STATES]->{$name} ) {
+        push @{ $self->[POE::Session::SE_STATES]->{$name} }, $handler;
+      } else {
+        # ReadWrite wheel seems to be determined to do this, plus,
+        # it does make sense.
+        $self->[POE::Session::SE_STATES]->{$name} = $handler;
+      }
     }
 
     # Non-coderef handlers may be package or object states.  See if
@@ -454,6 +460,11 @@ basics, and it gives an example of usage.  Please help me write more.
 =head1 AUTHOR
 
 Casey West <casey@geeknest.com>
+
+=head1 THANKS
+
+Matt Cashner -- Many features inspired by his earlier modle,
+POE::Session::Cascading.
 
 =head1 COPYRIGHT
 
